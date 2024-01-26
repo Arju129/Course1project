@@ -1,0 +1,71 @@
+
+<div>
+    <h1>Create a Client</h1>
+    <h3><u>please fill this form to create a client</u></h3>
+</div>
+<form [formGroup]="clientForm">
+
+    <div class="form-group">
+        <label for="clientName">Client Name:</label>
+        <br>
+
+        <input id="clientName" formControlName="clientName" required>
+
+        <div *ngIf="clientForm.get('clientName')?.hasError('required')" class="error-message">ClientName is
+            required.</div>
+        <div *ngIf="clientForm.get('clientName')?.hasError('minlength')" class="error-message">ClientName must
+            be at least 3 characters long.</div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="Email">Email:</label>
+        <br>
+
+        <input id="Email" formControlName="Email" required>
+
+        <div *ngIf="clientForm.get('Email')?.hasError('required')" class="error-message">Email is
+            required.</div>
+        <div *ngIf="clientForm.get('Email')?.hasError('email')" class="error-message">Please enter a valid Email Address</div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="Address">Address:</label>
+        <br>
+
+        <input id="Address" formControlName="Address" required>
+
+        <div *ngIf="clientForm.get('Address')?.hasError('required')" class="error-message">Address is
+            required.</div>
+        
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="Password">Password:</label>
+        <br>
+
+        <input id="Password" formControlName="Password" required>
+
+        <div *ngIf="clientForm.get('Password')?.hasError('required')" class="error-message">Password is
+            required.</div>
+         <div *ngIf="clientForm.get('Password')?.hasError('minlength')" class="error-message">Password must be at least
+        8 character long </div>
+        
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="RepeatPassword">RepeatPassword:</label>
+        <br>
+
+        <input id="RepeatPassword" formControlName="RepeatPassword" required>
+
+        <div *ngIf="clientForm.get('RepeatPassword')?.hasError('required')" class="error-message">Password is
+            required.</div>
+
+        <div *ngIf="clientForm.hasError('passwordMismatch')" class="error-message">Passwords do not match.</div>    
+            
+    </div>
+    <br>
+    <button (click)="addClient()" [disabled]="clientForm.invalid" class="btn btn-primary">Register</button>
+    </form>
+
+   

@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { AddclientComponent } from './addclient/addclient.component';
+import { ClientlistComponent } from './clientlist/clientlist.component';
+import { RouterModule } from '@angular/router';
+import { ClientmeetingComponent } from './clientmeeting/clientmeeting.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule,AddclientComponent,ClientlistComponent,RouterModule,ClientmeetingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

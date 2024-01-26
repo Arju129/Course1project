@@ -1,0 +1,32 @@
+.textborder {
+    color: black;
+    border: 1px solid blue;
+    background: green;
+}
+
+.horizontal-nav {
+    list-style-type: none;
+    padding: 10;
+    margin: 10;
+    display: flex;
+    justify-content: flex-end; /* Align the nav to the right */ 
+  }
+  
+  .horizontal-nav li {
+    margin-right: 10px; /* Adjust the spacing between items as needed */
+  }
+  
+  .horizontal-nav li:last-child {
+    margin-right: 0; /* Remove right margin for the last item */
+  }
+  
+  .horizontal-nav a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    border: 1px solid #ccc; /* Add borders for a button-like appearance */
+  }
+  
+  .horizontal-nav a:hover {
+    background-color: #f0f0f0; /* Change the background color on hover */
+  }

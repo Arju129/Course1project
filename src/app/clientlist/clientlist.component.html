@@ -1,0 +1,31 @@
+<p><u>Client List</u></p>
+
+<style>
+  table {
+    border-collapse: collapse;
+    width: 50%;
+  }
+
+  th, td {
+    padding: 10px; /* Adjust the padding as needed */
+    border: 2px solid #ddd; /* Add borders for better visibility */
+    text-align: center;
+  }
+</style>
+
+<table border="5px">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td>{{ client.clientName }}</td>
+      <td>{{ client.Email }}</td>
+      <td>{{ client.Address }}</td>
+    </tr>
+  </tbody>
+</table>

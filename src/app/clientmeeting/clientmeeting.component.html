@@ -1,0 +1,50 @@
+<p>clientmeeting works!</p>
+
+<div>
+    <h2><u>Create a Meeting Schedule</u></h2>
+    
+</div>
+<form [formGroup]="meetingForm">
+
+    <div class="form-group">
+        <label for="Meetingtopic">Meeting Topic:</label>
+        <br>
+
+        <input id="Meetingtopic" formControlName="Meetingtopic" required>
+
+        <div *ngIf="meetingForm.get('Meetingtopic')?.hasError('required')" class="error-message">Meetingtopic is
+            required.</div>
+       
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="Numberofpeople">Number of People:</label>
+        <br>
+
+        <input id="Numberofpeople" formControlName="Numberofpeople" required>
+
+        <div *ngIf="meetingForm.get('Numberofpeople')?.hasError('required')" class="error-message">Numberofpeople is
+            required.</div>
+        
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="Starttime">Start Time:</label>
+        <br>
+      
+        <input matInput type="datetime-local" id="Starttime" formControlName="Starttime" placeholder="Select date and time">
+      
+        <div *ngIf="meetingForm.get('Starttime')?.hasError('required')" class="error-message">
+          Start time is required.
+        </div>
+     
+
+    </div>
+    <br>
+        
+    
+    <button mat-raised-button (click)="createmeeting()" [disabled]="meetingForm.invalid" class="btn btn-primary">Create Meeting</button>
+ 
+</form>
+
+   
